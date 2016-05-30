@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // 제어됩니다. 어셈블리와 관련된 정보를 수정하려면
 // 이러한 특성 값을 변경하세요.
 [assembly: AssemblyTitle("KoreanParticleFormatter")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Korean Particle Formatter for SmartFormat.Net")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("KoreanParticleFormatter")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyCompany("What! Studio in Nexon Korea")]
+[assembly: AssemblyProduct("")]
+[assembly: AssemblyCopyright("Copyright 2016 Nexon Korea")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
