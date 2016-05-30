@@ -56,7 +56,8 @@
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
-  <Target Name="AfterBuild">
-  </Target>
   -->
+  <Target Name="AfterBuild">
+      <Exec Command="nuget pack KoreanParticleFormatter.csproj -Prop Configuratino=Release -IncludeReferencedProjects"></Exec>
+  </Target>
 </Project>
