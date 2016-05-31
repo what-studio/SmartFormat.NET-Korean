@@ -1,14 +1,16 @@
-# KoreanParticleFormatter
+# KoreanFormatter
 
-C#용 SmartFormat.Net에서 사용할 수 있는 한국어 조사 포매터입니다.
+C#용 [SmartFormat.Net][smartformat.net]에서 사용할 수 있는 한국어 조사 포매터입니다. python용 구현체는 [smartformat-korean][smartformat-korean]을 사용해주세요.
 
+[smartformat.net]: https://github.com/scottrippey/SmartFormat.NET
+[smartformat-korean]: https://github.com/what-studio/smartformat-korean
 
 ## 설치
 
 Nuget 관리자 콘솔을 이용해서 설치:
 
 ```cmd
-PM> Install-Package KoreanSmartFormatter
+PM> Install-Package SmartFormat.Net-Korean
 ```
 
 혹은 Nuget 페이지에서 다운로드
@@ -18,7 +20,7 @@ PM> Install-Package KoreanSmartFormatter
 
 SmartFormat.Net의 `Smart.cs` 파일을 수정해야 합니다.
 
-`CreateDefaultSmartFormat` 함수 안의 `AddExtensions` 파라미터로 `KoreanParticleFormatter`를 추가해 줍니다.
+`CreateDefaultSmartFormat` 함수 안의 `AddExtensions` 인자로 `KoreanFormatter`를 추가해 줍니다.
 
 ```diff
 public static SmartFormatter CreateDefaultSmartFormat()
@@ -46,7 +48,7 @@ public static SmartFormatter CreateDefaultSmartFormat()
 		new TimeFormatter("en"),
 		new XElementFormatter(),
 		new ChooseFormatter(),
-+		new KoreanParticleFormatter(result),
++		new KoreanFormatter(result),
 		new DefaultFormatter()
 		);
 
