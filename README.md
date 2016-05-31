@@ -1,9 +1,16 @@
 # KoreanFormatter
+ 
+[![travis][travis-img]][travis-link]
+[![GitHub license][license-img]][license-link]
 
 C#용 [SmartFormat.NET][smartformat.net]에서 사용할 수 있는 한국어 조사 포매터입니다. python용 구현체는 [smartformat-korean][smartformat-korean]을 사용해주세요.
 
 [smartformat.net]: https://github.com/scottrippey/SmartFormat.NET
 [smartformat-korean]: https://github.com/what-studio/smartformat-korean
+[travis-img]: https://api.travis-ci.org/what-studio/SmartFormat.NET-Korean.svg?branch=master
+[travis-link]: https://travis-ci.org/what-studio/SmartFormat.NET-Korean
+[license-img]: https://img.shields.io/badge/license-New%20BSD-blue.svg
+[license-link]: https://raw.githubusercontent.com/what-studio/SmartFormat.NET-Korean/master/LICENSE
 
 ## 설치
 
