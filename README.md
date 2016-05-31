@@ -13,48 +13,29 @@ Nuget 관리자 콘솔을 이용해서 설치:
 PM> Install-Package SmartFormat.NET-Korean
 ```
 
-혹은 Nuget 페이지에서 다운로드
+혹은 [Nuget 페이지][nuget-link]에서 다운로드
 
+[nuget-link]: https://www.nuget.org/packages/SmartFormat.NET-Korean
 
-## 설정
+## 사용법
 
-SmartFormat.Net의 `Smart.cs` 파일을 수정해야 합니다.
-
-`CreateDefaultSmartFormat` 함수 안의 `AddExtensions` 인자로 `KoreanFormatter`를 추가해 줍니다.
-
-```diff
-public static SmartFormatter CreateDefaultSmartFormat()
+```c#
+namespace SmartFormatKoreanDemo
 {
-	// Register all default extensions here:
-	var result = new SmartFormatter();
-	// Add all extensions:
-	// Note, the order is important; the extensions
-	// will be executed in this order:
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			Smart.Default.AddExtensions(new KoreanFormatter(Smart.Default));
 
-	var listFormatter = new ListFormatter(result);
-	
-	result.AddExtensions(
-		(ISource)listFormatter,
-		new ReflectionSource(result),
-		new DictionarySource(result),
-		new XmlSource(result),
-		// These default extensions reproduce the String.Format behavior:
-		new DefaultSource(result)
-		);
-	result.AddExtensions(
-		(IFormatter)listFormatter,
-		new PluralLocalizationFormatter("en"),
-		new ConditionalFormatter(),
-		new TimeFormatter("en"),
-		new XElementFormatter(),
-		new ChooseFormatter(),
-+		new KoreanFormatter(result),
-		new DefaultFormatter()
-		);
-
-	return result;
+			Console.WriteLine(Smart.Format("{0:는} {1:를} 먹었다.", "나오", "부엉이"));
+			Console.ReadKey();
+		}
+	}
 }
 ```
+
+![demo-image](demo_image.png)
 
 ## 자연스러운 조사 선택
 
