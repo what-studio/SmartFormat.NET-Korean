@@ -28,7 +28,10 @@ namespace SmartFormatKoreanDemo
 		{
 			Smart.Default.AddExtensions(new KoreanFormatter(Smart.Default));
 
-			Console.WriteLine(Smart.Format("{0:는} {1:를} 먹었다.", "나오", "부엉이"));
+			Console.WriteLine(Smart.Format("{0:은} {1:을} 먹었다.", "나오", "부엉이"));
+			Console.WriteLine(Smart.Format("{0:이} 갖고 싶어요.", "나오 피규어"));
+			Console.WriteLine(Smart.Format("{0:이} {1:을} 춘다.", "티라노", "콩댄스"));
+			Console.WriteLine(Smart.Format("{0:의} {1:이에요}", "넥슨 왓! 스튜디오", "듀랑고"));
 			Console.ReadKey();
 		}
 	}
