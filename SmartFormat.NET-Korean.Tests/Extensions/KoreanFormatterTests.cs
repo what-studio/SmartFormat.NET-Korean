@@ -7,14 +7,14 @@ using SmartFormat.Extensions;
 namespace KoreanParticleFormatter.Tests.Extensions
 {
 	[TestFixture]
-	class KoreanParticleFormatterTests
+	class KoreanFormatterTests
 	{
 		[SetUp]
 		public void Setup()
 		{
-			if (!Smart.Default.FormatterExtensions.Any(x => x is SmartFormat.Extensions.KoreanParticleFormatter))
+			if (!Smart.Default.FormatterExtensions.Any(x => x is SmartFormat.Extensions.KoreanFormatter))
 			{
-				Smart.Default.FormatterExtensions.Insert(0, new SmartFormat.Extensions.KoreanParticleFormatter(Smart.Default));
+				Smart.Default.FormatterExtensions.Insert(0, new SmartFormat.Extensions.KoreanFormatter(Smart.Default));
 			}
 		}
 

@@ -6,7 +6,7 @@ using SmartFormat.Utilities;
 
 namespace SmartFormat.Extensions
 {
-	public class KoreanParticleFormatter : IFormatter
+	public class KoreanFormatter : IFormatter
 	{
 		private string[] names = { "ko", "" };
 		public string[] Names { get { return names; } set { names = value; } }
@@ -38,7 +38,7 @@ namespace SmartFormat.Extensions
 		private readonly Regex _euroPattern = new Regex(@"^(으|\(으\))?로");
 		private readonly Regex _idaPrefixPattern = new Regex(@"^이|\(이\)");
 
-		public KoreanParticleFormatter(SmartFormatter formatter)
+		public KoreanFormatter(SmartFormatter formatter)
 		{
 			_formatter = formatter;
 		}

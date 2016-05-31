@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8EF1A879-19E4-41BB-88C4-CEADA2E7D190}</ProjectGuid>
+    <ProjectGuid>{F00EA807-2975-41F6-AD8F-C1BCE7A3B4F5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KoreanParticleFormatter.Tests</RootNamespace>
-    <AssemblyName>KoreanParticleFormatter.Tests</AssemblyName>
+    <RootNamespace>SmartFormatKorean</RootNamespace>
+    <AssemblyName>SmartFormatKorean</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="SmartFormat, Version=1.6.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SmartFormat.NET.1.6.1.0\lib\net40\SmartFormat.dll</HintPath>
       <Private>True</Private>
@@ -48,26 +44,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\KoreanParticleFormatterTests.cs" />
+    <Compile Include="Extensions\KoreanFormatter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utilities\HangulTests.cs" />
+    <Compile Include="Utilities\Hangul.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <ProjectReference Include="..\KoreanParticleFormatter\KoreanParticleFormatter.csproj">
-      <Project>{F00EA807-2975-41F6-AD8F-C1BCE7A3B4F5}</Project>
-      <Name>KoreanParticleFormatter</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
-  <Target Name="AfterBuild">
-  </Target>
   -->
+  <Target Name="AfterBuild">
+    <Exec Command="nuget pack SmartFormat.NET-Korean.csproj -Prop Configuration=Release -IncludeReferencedProjects">
+    </Exec>
+  </Target>
 </Project>

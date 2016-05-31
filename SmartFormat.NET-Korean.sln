@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoreanParticleFormatter", "KoreanParticleFormatter\KoreanParticleFormatter.csproj", "{F00EA807-2975-41F6-AD8F-C1BCE7A3B4F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartFormat.NET-Korean", "SmartFormat.NET-Korean\SmartFormat.NET-Korean.csproj", "{F00EA807-2975-41F6-AD8F-C1BCE7A3B4F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoreanParticleFormatter.Tests", "KoreanParticleFormatter.Tests\KoreanParticleFormatter.Tests.csproj", "{8EF1A879-19E4-41BB-88C4-CEADA2E7D190}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartFormat.NET-Korean.Tests", "SmartFormat.NET-Korean.Tests\SmartFormat.NET-Korean.Tests.csproj", "{8EF1A879-19E4-41BB-88C4-CEADA2E7D190}"
 	ProjectSection(ProjectDependencies) = postProject
 		{F00EA807-2975-41F6-AD8F-C1BCE7A3B4F5} = {F00EA807-2975-41F6-AD8F-C1BCE7A3B4F5}
 	EndProjectSection
