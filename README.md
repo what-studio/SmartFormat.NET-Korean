@@ -1,6 +1,6 @@
 # KoreanFormatter
 
-C#용 [SmartFormat.Net][smartformat.net]에서 사용할 수 있는 한국어 조사 포매터입니다. python용 구현체는 [smartformat-korean][smartformat-korean]을 사용해주세요.
+C#용 [SmartFormat.NET][smartformat.net]에서 사용할 수 있는 한국어 조사 포매터입니다. python용 구현체는 [smartformat-korean][smartformat-korean]을 사용해주세요.
 
 [smartformat.net]: https://github.com/scottrippey/SmartFormat.NET
 [smartformat-korean]: https://github.com/what-studio/smartformat-korean
@@ -10,7 +10,7 @@ C#용 [SmartFormat.Net][smartformat.net]에서 사용할 수 있는 한국어 �
 Nuget 관리자 콘솔을 이용해서 설치:
 
 ```cmd
-PM> Install-Package SmartFormat.Net-Korean
+PM> Install-Package SmartFormat.NET-Korean
 ```
 
 혹은 Nuget 페이지에서 다운로드
