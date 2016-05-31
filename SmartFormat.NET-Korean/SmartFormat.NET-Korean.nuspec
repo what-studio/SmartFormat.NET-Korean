@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>$id$</id>
+    <id>SmartFormat.NET-Korean</id>
     <version>$version$</version>
-    <title>$title$</title>
+    <title>SmartFormat.NET-Korean</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
     <licenseUrl>https://github.com/what-studio/SmartFormat.Net-Korean/blob/master/LICENSE</licenseUrl>
