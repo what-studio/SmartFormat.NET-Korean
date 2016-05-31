@@ -5,5 +5,5 @@ install:
   - nuget restore SmartFormat.NET-Korean.sln
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
 script:
-  - xbuild /p:Configuration=Release SmartFormat.NET-Korean.sln
+  - xbuild /p:Configuration=Release SmartFormat.NET-Korean.sln /p:PostBuildEvent=""
   - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./SmartFormat.NET-Korean.Tests/bin/Release/SmartFormatKorean.Tests.dll
