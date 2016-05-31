@@ -1,0 +1,9 @@
+language: csharp
+solution: SmartFormat.NET-Korean.sln
+install:
+  - sudo apt-get install -y gtk-sharp2
+  - nuget restore SmartFormat.NET-Korean.sln
+  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
+script:
+  - xbuild /p:Configuration=Release SmartFormat.NET-Korean.sln
+  - mono ./testrunner/NUnit.Runner.2.6.4/tools/nunit-console.exe ./SmartFormat.NET-Korean.Tests/bin/Release/SmartFormatKorean.Tests.dll
