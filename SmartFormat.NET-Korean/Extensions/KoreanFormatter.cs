@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using SmartFormat.Core.Extensions;
 using SmartFormat.Utilities;
@@ -17,6 +18,20 @@ namespace SmartFormat.Extensions
 
 		internal class SyllableInfo
 		{
+			/// <summary>
+			/// Evaluate the syllable information of Hangul character.
+			///
+			/// `Hangul` unicode range: 가(U+AC00) ~ 힣(U+D7A3)
+			/// </summary>
+			/// <param name="hangulChar">A `Hangul` character.</param>
+			public SyllableInfo(char hangulChar)
+			{
+				int jongsungExpr = (hangulChar - '가') % 28;
+				HasCoda = jongsungExpr != 0;
+				HasRieulCoda = jongsungExpr == 8;
+				System.Collections.Generic.Dictionary<int, int> a;
+			}
+
 			// in Korean, `Coda` means final position of syllable
 			public bool HasCoda;
 			public bool HasRieulCoda;
@@ -172,19 +187,18 @@ namespace SmartFormat.Extensions
 
 			var lastChar = filteredValue[filteredValue.Length - 1];
 
+			if (Hangul.IsNumericChar(lastChar))
+			{
+				lastChar = _hangul.PickLastHangulCharacterFromNumber(value);
+			}
+
 			// `Hangul` unicode range: 가(U+AC00) ~ 힣(U+D7A3)
 			if (!(('가' <= lastChar) && (lastChar <= '힣')))
 			{
 				return null;
 			}
 
-			int jongsungExpr = (lastChar - '가') % 28;
-
-			return new SyllableInfo()
-			{
-				HasCoda = jongsungExpr != 0,
-				HasRieulCoda = jongsungExpr == 8
-			};
+			return new SyllableInfo(lastChar);
 		}
 
 		private string ParticleConverter(string josaFormat, SyllableInfo syllableInfo)
