@@ -167,6 +167,8 @@ namespace KoreanParticleFormatter.Tests.Extensions
 
 		[TestCase("금화 {0:이}", "10", "금화 10이")]
 		[TestCase("레벨 {0:이}", "999", "레벨 999가")]
+		[TestCase("금화 {0:이}", 10, "금화 10이")]
+		[TestCase("레벨 {0:이}", 999, "레벨 999가")]
 		public void Test_Number(string format, object arg0, string expectedResult)
 		{
 			Assert.AreEqual(expectedResult, Smart.Format(format, arg0));
