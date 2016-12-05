@@ -72,7 +72,7 @@ namespace SmartFormat.Extensions
 			}
 			else
 			{
-				return false;
+				currentValue = formattingInfo.CurrentValue.ToString();
 			}
 
 			SyllableInfo syllableInfo = EvaluateSyllable(currentValue);
